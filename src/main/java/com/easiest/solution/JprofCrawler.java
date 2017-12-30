@@ -6,8 +6,6 @@ import edu.uci.ics.crawler4j.parser.HtmlParseData;
 import edu.uci.ics.crawler4j.url.WebURL;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import rx.Observable;
-import rx.schedulers.Schedulers;
 
 public class JprofCrawler extends WebCrawler {
 
@@ -34,9 +32,7 @@ public class JprofCrawler extends WebCrawler {
       String text = htmlParseData
           .getHtml();  //solution with html analyzing can be easily changed with htmlParseData.getText()
 
-      Observable.just(text)
-          .subscribeOn(Schedulers.computation())
-          .subscribe(this::countJava);
+      countJava(text);
     }
   }
 

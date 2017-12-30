@@ -19,6 +19,9 @@ public class HereWeGo {
 
     CrawlConfig config = new CrawlConfig();
     config.setCrawlStorageFolder(crawlStorageFolder);
+    config.setCleanupDelaySeconds(2);
+    config.setThreadShutdownDelaySeconds(2);
+    config.setThreadMonitoringDelaySeconds(2);
 
     PageFetcher pageFetcher = new PageFetcher(config);
     RobotstxtConfig robotstxtConfig = new RobotstxtConfig();
